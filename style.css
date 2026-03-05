@@ -1,0 +1,168 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top left, #1e1e2f, #0f0f0f);
+    color: white;
+}
+
+/* Área principal alinhando jogo + painel */
+#areaJogo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+/* Coluna do jogo */
+#colunaJogo {
+    text-align: center;
+}
+
+/* Tabuleiro */
+#tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+/* Placar */
+#placar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Células */
+.celula {
+    width: 100px;
+    height: 100px;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.celula:hover {
+    background-color: #333;
+}
+
+.celula.vencedora {
+    background-color: #00ff88;
+    color: black;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* Botões gerais */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0097a7;
+}
+
+/* Painel de dificuldade */
+#painelDificuldade {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    padding: 25px;
+    border-radius: 16px;
+
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 180px;
+}
+
+
+#painelDificuldade h3 {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+/* Botões dificuldade */
+.btn-dif {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+
+    padding: 12px 20px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: bold;
+}
+
+.btn-dif:hover {
+    background: rgba(0, 255, 136, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-dif.ativo {
+    background: rgba(0, 255, 136, 0.25);
+    border: 1px solid rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+/* Overlay */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#overlay.ativo {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.modal {
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    animation: pop 0.3s ease forwards;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pop {
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
+}

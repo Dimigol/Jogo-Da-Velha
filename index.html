@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Velha - Dimitri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="areaJogo">
+
+        <!-- Coluna principal do jogo -->
+        <div id="colunaJogo">
+
+            <h1>Jogo da Velha</h1>
+
+            <div id="tabuleiro">
+                <div class="celula" data-index="0"></div>
+                <div class="celula" data-index="1"></div>
+                <div class="celula" data-index="2"></div>
+                <div class="celula" data-index="3"></div>
+                <div class="celula" data-index="4"></div>
+                <div class="celula" data-index="5"></div>
+                <div class="celula" data-index="6"></div>
+                <div class="celula" data-index="7"></div>
+                <div class="celula" data-index="8"></div>
+            </div>
+
+            <button id="btnReiniciar" onclick="reiniciar()">
+                Jogar Novamente
+            </button>
+
+            <div id="placar">
+                <span>X: <strong id="pontosX">0</strong></span>
+                <span>O: <strong id="pontosO">0</strong></span>
+                <span>Empates: <strong id="empates">0</strong></span>
+            </div>
+
+        </div>
+
+        <!-- Painel lateral de dificuldade -->
+        <div id="painelDificuldade">
+
+            <h3>Dificuldade</h3>
+
+            <button class="btn-dif ativo" data-dif="facil">Fácil</button>
+            <button class="btn-dif" data-dif="medio">Médio</button>
+            <button class="btn-dif" data-dif="dificil">Difícil</button>
+            <button class="btn-dif" data-dif="minimax">Minimax</button>
+
+        </div>
+
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="hidden">
+        <div class="modal">
+            <h2 id="mensagemVitoria"></h2>
+            <button onclick="reiniciar()">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
